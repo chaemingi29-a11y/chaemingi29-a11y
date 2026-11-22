@@ -22,9 +22,6 @@ Hanbat National University · Republic of Korea
 | Project | Focus |
 | :--- | :--- |
 | [Craftax Resource-Aware Skill](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill) | Collaborative reinforcement learning research |
-| 3D Point Cloud Processing | Industrial scan preprocessing and outlier removal |
-| Geometric Normal Estimation | Hole-rim fitting and approach-angle estimation |
-| Computer Vision Experiments | Grad-CAM, Guided Backpropagation and CLIP |
 
 ## Tech Stack
 
