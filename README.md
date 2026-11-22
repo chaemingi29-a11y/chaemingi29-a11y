@@ -1,61 +1,96 @@
-# 채민기 | Mingi Chae
+<div align="center">
 
-`AI & Software Developer` · `Hanbat National University`
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0B1120,100:0E7490&height=190&section=header&text=MINGI%20CHAE&fontSize=55&fontColor=FFFFFF&fontAlignY=40&desc=AI%20Research%20%26%20Software%20Development&descAlignY=68&descSize=19" width="100%" alt="Mingi Chae"/>
 
-> 모델이 왜 실패하는지 분석하고, 실험을 통해 개선 방법을 찾습니다.
+**채민기 · Hanbat National University**
 
-[![Portfolio](https://img.shields.io/badge/Personal_Portfolio-158C9C?style=for-the-badge&logo=githubpages&logoColor=white)](https://chaemingi29-a11y.github.io/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chaemingi29-a11y)
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=19&duration=3000&pause=1200&color=22D3EE&center=true&vCenter=true&width=700&lines=Reinforcement+Learning;Computer+Vision;3D+Point+Cloud+Processing" alt="Research interests"/>
 
-## 01 — Research focus
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-0E7490?style=for-the-badge&logo=githubpages&logoColor=white)](https://chaemingi29-a11y.github.io/)
+[![GitHub](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chaemingi29-a11y)
 
-| Area | Interests |
+</div>
+
+## About me
+
+국립한밭대학교에서 컴퓨터 분야를 전공하고 있는 채민기입니다. 강화학습과 컴퓨터 비전에 관심을 가지고 모델의 동작 원리와 실험적 검증 방법을 공부하고 있습니다.
+
+## Research interests
+
+| Research area | Focus |
 | :--- | :--- |
-| Reinforcement Learning | 정책 학습, 행동 선택, 실패 분석 |
-| Computer Vision | 딥러닝 기반 영상 분석 및 모델 해석 |
-| 3D Geometry | 점군 이상치 제거, 형상 피팅, 법선 추정 |
+| Reinforcement Learning | Policy Learning · Action Masking · Skill Learning |
+| Computer Vision | Deep Learning · Model Interpretability |
+| 3D Point Cloud | Outlier Removal · Geometric Fitting · Normal Estimation |
 
-## 02 — Selected research
+## Collaborative research
 
-### [Craftax · Resource-Aware Skill](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill)
+### [Craftax — Resource-Aware Skill Intervention](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill)
 
-**Collaborative research** · Reinforcement Learning
+![Team Research](https://img.shields.io/badge/Project-Team_Research-0E7490?style=flat-square)
+![RL](https://img.shields.io/badge/Field-Reinforcement_Learning-334155?style=flat-square)
+![Collaborator](https://img.shields.io/badge/Role-Collaborator-059669?style=flat-square)
 
-Craftax 환경에서 철 도구 제작에 필요한 자원을 가지고도 제작 가능한 상태를 구성하지 못하는 정책의 한계를 분석한 공동 연구입니다. 기존 PPO-RNN을 다시 학습하지 않고, 필요한 순간에만 별도의 상태 구성 Skill을 개입시키는 방법을 다룹니다.
+**Team:** [김겸](https://github.com/Gyeometry) · [문형준](https://github.com/munh36369-ship-it) · **채민기**
 
-**Approach**
+Craftax-Classic 환경에서 기존 강화학습 정책이 철 도구 제작에 필요한 상태를 구성하지 못하는 문제를 분석하고, 자원 인식형 Skill 개입으로 보완하는 공동 연구입니다.
 
-- Invalid Action Masking을 적용한 PPO-RNN을 기본 정책으로 사용
-- Planner 시연을 활용한 CNN-GRU Skill 학습
-- 보유 자원과 설비 설치 비용을 고려해 Skill 개입 여부 결정
+**Research scope**
 
-**Team experiment highlights**
+- PPO-RNN 및 Invalid Action Masking
+- CNN-GRU 기반 State-Construction Skill
+- Resource-Aware Initiation 및 선택적 정책 개입
+- 동일 평가 조건에서의 성능 비교
 
-<table>
-<tr><th>Mean Raw Return</th><th>Iron Pickaxe</th><th>Iron Sword</th></tr>
-<tr><td><b>14.27 → 14.50</b></td><td><b>158 → 569</b></td><td><b>151 → 653</b></td></tr>
-</table>
+<details>
+<summary><b>Team experimental results</b></summary>
 
-조건당 4,096게임에서 평가된 팀 전체의 결과입니다.
+조건당 4,096게임 평가 결과입니다.
 
-[Source code](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill) · [Architecture](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill/blob/main/docs/ARCHITECTURE.md) · [Experiment results](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill/blob/main/docs/RESULTS.md)
+| Metric | Baseline + Masking | Proposed |
+| :--- | ---: | ---: |
+| Mean Raw Return | 14.26577 | **14.49502** |
+| Iron Pickaxe | 158 | **569** |
+| Iron Sword | 151 | **653** |
 
-<sub>공동 연구 결과를 소개하며, 개인 단독 성과나 논문 게재 확정을 의미하지 않습니다. 코드와 연구 자료의 이용 조건은 원본 저장소의 라이선스를 따릅니다.</sub>
+위 수치는 팀 전체의 실험 결과입니다.
 
-## 03 — Toolbox
+[실험 결과 상세 보기](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill/blob/main/docs/RESULTS.md)
 
-**Languages**
+</details>
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+[Research repository](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill) · [System architecture](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill/blob/main/docs/ARCHITECTURE.md)
+
+<sub>공동 연구 참여 이력을 소개하며, 개인 단독 저작 또는 논문 게재 확정을 의미하지 않습니다. 원본 코드와 자산은 해당 저장소의 라이선스를 따릅니다.</sub>
+
+## Technical skills
+
+**Programming**
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
 
 **AI & Development**
 
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)
+
+## GitHub activity
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=chaemingi29-a11y&show_icons=true&theme=transparent&hide_border=true&title_color=0891B2&icon_color=0891B2" alt="GitHub statistics" />
+
+[View contribution history](https://github.com/chaemingi29-a11y)
+
+</div>
 
 ---
 
-Learning through research, one experiment at a time.
+<div align="center">
+
+**Learn through experiments. Improve through understanding.**
+
+</div>
