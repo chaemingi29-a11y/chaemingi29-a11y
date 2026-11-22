@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1120,50:1E40AF,100:0891B2&height=220&section=header&text=MINGI%20CHAE&fontSize=55&fontColor=FFFFFF&fontAlignY=40&desc=AI%20Research%20%26%20Software%20Development&descAlignY=68&descSize=19" width="100%" alt="Mingi Chae"/>
+# Mingi Chae
 
 **채민기 · Hanbat National University**
 
