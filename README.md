@@ -13,7 +13,7 @@
 
 ## About me
 
-국립한밭대학교에서 컴퓨터 분야를 전공하고 있는 채민기입니다. 강화학습과 컴퓨터 비전에 관심을 가지고 모델의 동작 원리와 실험적 검증 방법을 공부하고 있습니다.
+국립한밭대학교에서 컴퓨터 분야를 전공하고 있는 채민기입니다. 강화학습과 컴퓨터 비전을 중심으로 인공지능 모델의 동작 원리를 이해하고, 실험을 통해 성능과 한계를 검증하는 연구에 관심이 있습니다. 현재 공개된 연구 프로젝트는 Craftax 기반 강화학습 공동 연구입니다.
 
 ## Research interests
 
@@ -35,12 +35,33 @@
 
 Craftax-Classic 환경에서 기존 강화학습 정책이 철 도구 제작에 필요한 상태를 구성하지 못하는 문제를 분석하고, 자원 인식형 Skill 개입으로 보완하는 공동 연구입니다.
 
-**Research scope**
+**Research question:** 필요한 자원을 이미 확보한 정책은 왜 철 도구를 제작하지 못할까?
 
-- PPO-RNN 및 Invalid Action Masking
-- CNN-GRU 기반 State-Construction Skill
-- Resource-Aware Initiation 및 선택적 정책 개입
-- 동일 평가 조건에서의 성능 비교
+| Research stage | Description |
+| :--- | :--- |
+| Policy baseline | PPO-RNN에 Invalid Action Masking 적용 |
+| Bottleneck analysis | 자원 확보와 제작 가능 상태 구성의 실패를 분리하여 분석 |
+| Skill policy | Planner의 행동 시연으로 CNN-GRU Skill 학습 |
+| Selective intervention | 보유 자원과 설비 설치 비용에 따라 개입 결정 |
+| Evaluation | 기본 정책의 가중치를 고정한 상태에서 비교 실험 |
+
+<details>
+<summary><b>How the system works</b></summary>
+
+```mermaid
+flowchart TD
+  O[Environment observation] --> G{Resource-aware gate}
+  G -->|Continue| P[Frozen PPO-RNN]
+  G -->|Intervene| S[CNN-GRU skill]
+  P --> A[Environment action]
+  S --> A
+  S -->|Skill ends| P
+  A --> O
+```
+
+Skill은 제작 가능한 상태를 준비하며, 실제 철 도구 제작 행동은 기본 정책이 선택합니다.
+
+</details>
 
 <details>
 <summary><b>Team experimental results</b></summary>
@@ -53,7 +74,7 @@ Craftax-Classic 환경에서 기존 강화학습 정책이 철 도구 제작에 
 | Iron Pickaxe | 158 | **569** |
 | Iron Sword | 151 | **653** |
 
-위 수치는 팀 전체의 실험 결과입니다.
+자원 인식형 개입을 적용하면 Skill 시작 대비 상태 구성 완료율은 43.41%에서 82.08%로 증가했습니다. 위 수치는 팀 전체의 실험 결과이며, 개입 조건이 달라졌으므로 Skill 자체의 성능 개선으로 단정하지 않습니다.
 
 [실험 결과 상세 보기](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill/blob/main/docs/RESULTS.md)
 
@@ -62,6 +83,13 @@ Craftax-Classic 환경에서 기존 강화학습 정책이 철 도구 제작에 
 [Research repository](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill) · [System architecture](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill/blob/main/docs/ARCHITECTURE.md)
 
 <sub>공동 연구 참여 이력을 소개하며, 개인 단독 저작 또는 논문 게재 확정을 의미하지 않습니다. 원본 코드와 자산은 해당 저장소의 라이선스를 따릅니다.</sub>
+
+## Research collaboration
+
+- **Participation:** 공동 연구자 (Collaborator)
+- **Repository owner:** [Gyeom Kim](https://github.com/Gyeometry)
+- **Research team:** Gyeom Kim · Hyeongjun Moon · Mingi Chae
+- **Research records:** [Project work](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill/blob/main/docs/PROJECT_WORK.md) · [Reproducibility](https://github.com/Gyeometry/Craftax-Resource-Aware-Skill/blob/main/docs/REPRODUCIBILITY.md)
 
 ## Technical skills
 
